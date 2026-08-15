@@ -1,0 +1,170 @@
+v2.0 raw
+
+2022
+10ff
+3002 #set the score to -1 as we are adding in a loop, so if we added at the start of the loop starting at 0, we  	#would be off by 1
+#253/256
+5048 5069 5067 5068 5065 5072 5020 506F 5072 5020 504C 506F 5077 5065 5072 500A 502D 5054 5077 506F 5020 506E 5075 506D 5062 5065 5072 5073 5020 5067 5065 506E 5065 5072 5061 5074 5065 5064 500A 502D 5059 506F 5075 5020 5073 5065 5065 5020 506F 506E 5065 502C 5020 5067 5075 5065 5073 5073 5020 5069
+ 5066 5020 5068 5069 5064 5064 5065 506E 5020 5069 5073 5020 5068 5069 5067 5068 5065 5072 502F 506C 506F 5077 5065 5072 500A 502D 5052 5069 5067 5068 5074 5020 503D 5020 5063 506F 506E 5074 5069 506E 5075 5065 502C 5020 5057 5072 506F 506E 5067 5020 503D 5020 506C 506F 5073 5065 500A 502D 5050 5072 5065 5073 5073 5020 5061 506E 5079 5020 506B 5065 5079
+5000
+7000
+
+#outputs the message
+#Higher or Lower
+#-Two numbers generated
+#-See one, guess if hidden is higher/lower
+#-Right = continue, Wrong = lose
+#-Press any key
+
+
+1700 3000 # loop begins here
+
+1700 3001 #generate two random numbers and store them   
+2002
+1101
+3002 # loads the score adds 1 to the score and stores it
+2000
+2501
+3003 # here we will load both random numbers and check if 00 > 01 and store the result 
+6000 #Clears the TTY from previous characters before writing on it
+1069 
+5000
+1073
+5000 # writes the words "is"
+1020
+5000
+
+2000  #loads 00               hundreds 
+1a64
+1601
+5000  # does n DIV 100 converts it to ascii and outputs it
+
+2000 #tens
+1a0a
+1b0a
+1601
+5000 # does (n DIV 10) MOD 10 converts it to ascii and outputs it
+
+
+2000 #ones
+1b0a
+1601 
+5000  # does n MOD 10 converts it to ascii and outputs it
+
+5020
+
+5048 
+
+5069
+
+5067
+
+5068
+
+5065
+
+5072
+
+5020
+
+506f
+
+5072
+
+5020
+
+504c
+
+506f
+
+5077
+
+5065
+
+5072
+
+5020  # all of this from the last comment writes the words " is Higher or Lower" to the TTY
+
+7000  # waits for a player's input
+
+1800   
+2903 #checks if the button pressed equals the result of the greater than calculation of the two random numbers 
+     #if its correct then it will output 01 
+4088 # branch back to the beginning as the game continues 
+
+6000 # if the values are not equal that means the player answered incorrectly and therefore exit the loop
+
+5047 
+  
+5061
+  
+506D
+  
+5065
+  
+5020
+  
+504F
+  
+5076
+
+5065
+  
+5072
+  
+5021 
+ 
+500A
+  
+5053
+  
+5063
+  
+506F
+
+5072
+  
+5065
+
+503A
+  
+5020  
+
+
+2002 
+1a64
+1601
+5000 # does n DIV 100 converts it to ascii and outputs it
+
+2002
+1a0a
+1b0a
+1601
+5000  # does (n DIV 10) MOD 10 converts it to ascii and outputs it
+
+2002
+1b0a
+1601 
+5000  # does n MOD 10 converts it to ascii and outputs it 
+
+
+500A 5050 5072 5065 5073 5073 5020 5061 506E 5079 5020 506B 5065 5079 5020 5074 506F 5020 5070 506C 5061 5079 5020 5061 5067 5061 5069 506E 5000
+7000
+1001
+6000
+4000
+
+
+
+    # all of this writes the words "Game Over!
+		 #		        Score:(outputs score)" to the TTY
+		#			Press any key to play again
+
+
+
+
+f000  # stop put stop here as a precaution incase it somehow breaks
+
+
+
+
